@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "962662374287",
+    "project_id": "hearing-aid-mobile-app",
+    "storage_bucket": "hearing-aid-mobile-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962662374287:android:38ee12ff575e23fb0689fa",
+        "android_client_info": {
+          "package_name": "com.hearingaid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962662374287-n8jtds61vg7qt5jd2s37cihe78pr7gep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxx3AceZPdvr9ka7x4TIzhkXb8QAzy13g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "962662374287-n8jtds61vg7qt5jd2s37cihe78pr7gep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
