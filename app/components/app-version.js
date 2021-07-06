@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
-import { name, version } from '../../package.json';
+import { displayName } from '../../app.json';
+import { version } from '../../package.json';
 
 const AppVersion = () => {
-  return <Text style={styles.appInfoText}>{`${name} ${version}`}</Text>;
+  return <Text style={styles.appInfoText}>{`${displayName} ${version}`}</Text>;
 };
 
 export default AppVersion;

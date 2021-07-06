@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "HearingAid.app"
-               BlueprintName = "HearingAid"
-               ReferencedContainer = "container:HearingAid.xcodeproj">
+               BuildableName = "HearingAID.app"
+               BlueprintName = "HearingAID"
+               ReferencedContainer = "container:HearingAID.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "HearingAidTests.xctest"
-               BlueprintName = "HearingAidTests"
-               ReferencedContainer = "container:HearingAid.xcodeproj">
+               BuildableName = "HearingAIDTests.xctest"
+               BlueprintName = "HearingAIDTests"
+               ReferencedContainer = "container:HearingAID.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "HearingAid.app"
-            BlueprintName = "HearingAid"
-            ReferencedContainer = "container:HearingAid.xcodeproj">
+            BuildableName = "HearingAID.app"
+            BlueprintName = "HearingAID"
+            ReferencedContainer = "container:HearingAID.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "HearingAid.app"
-            BlueprintName = "HearingAid"
-            ReferencedContainer = "container:HearingAid.xcodeproj">
+            BuildableName = "HearingAID.app"
+            BlueprintName = "HearingAID"
+            ReferencedContainer = "container:HearingAID.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
