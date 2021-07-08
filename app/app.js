@@ -1,15 +1,18 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, Layout } from '@ui-kitten/components';
 import AppVersion from './components/app-version';
 import TranscriptionScreen from './screens/transcription-screen';
 
 const App = () => {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
-      <AppVersion />
+    <ApplicationProvider {...eva} theme={eva.light}>
+      <Layout style={{ flex: 1 }}>
+        <AppVersion />
 
-      <TranscriptionScreen />
-    </SafeAreaView>
+        <TranscriptionScreen />
+      </Layout>
+    </ApplicationProvider>
   );
 };
 

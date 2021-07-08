@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
+import { Button, Layout, Text } from '@ui-kitten/components';
 import Voice from '@react-native-voice/voice';
 import { check, PERMISSIONS, request, RESULTS } from 'react-native-permissions';
 
 const Results = ({ results }) => {
   return (
     <View style={{ alignItems: 'center' }}>
-      <Text style={{ fontSize: 14, color: 'gray', marginBottom: 10 }}>
+      <Text category="label" appearance="hint" style={{ marginBottom: 10 }}>
         Possible results:
       </Text>
 
       {results.map((result, index) => (
-        <Text key={index} style={styles.transcriptionText}>
+        <Text key={index} category="p1">
           {result}
         </Text>
       ))}
@@ -20,12 +21,14 @@ const Results = ({ results }) => {
 };
 
 const PartialResult = ({ partialResult }) => {
-  return <Text style={styles.transcriptionText}>{partialResult}</Text>;
+  return <Text category="p1">{partialResult}</Text>;
 };
 
 const ErrorMessage = ({ error }) => {
   return (
-    <Text style={{ fontSize: 14, color: 'red' }}>{JSON.stringify(error)}</Text>
+    <Text category="p1" status="danger" style={{ marginBottom: 10 }}>
+      {JSON.stringify(error)}
+    </Text>
   );
 };
 
@@ -90,14 +93,14 @@ const Transcription = () => {
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: 'white',
-        paddingVertical: 30,
-        paddingHorizontal: 20,
-      }}>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <Layout style={{ flex: 1 }}>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          margin: 20,
+        }}>
         {error && <ErrorMessage error={error} />}
 
         {isListening && partialResults.length === 1 && (
@@ -106,41 +109,21 @@ const Transcription = () => {
 
         {!isListening && results.length > 0 && <Results results={results} />}
 
-        {!isListening &&
-          results.length === 0 &&
-          partialResults.length === 0 && (
-            <Text style={styles.transcriptionText}>Start talking...</Text>
-          )}
+        {!isListening && results.length === 0 && partialResults.length === 0 && (
+          <Text category="p1" appearance="hint">
+            Start talking...
+          </Text>
+        )}
       </View>
 
-      <TouchableOpacity
-        style={[
-          styles.button,
-          { backgroundColor: isListening ? 'red' : 'green' },
-        ]}
-        activeOpacity={0.8}
-        onPress={handleClick}>
-        <Text style={styles.buttonText}>{isListening ? 'Stop' : 'Start'}</Text>
-      </TouchableOpacity>
-    </View>
+      <Button
+        onPress={handleClick}
+        status={isListening ? 'danger' : 'primary'}
+        style={{ marginHorizontal: 20, marginBottom: 30 }}>
+        {isListening ? 'STOP' : 'START'}
+      </Button>
+    </Layout>
   );
 };
 
 export default Transcription;
-
-const styles = StyleSheet.create({
-  button: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 6,
-    width: '100%',
-    alignItems: 'center',
-  },
-  buttonText: {
-    fontSize: 16,
-    fontWeight: '700',
-    color: 'white',
-    textTransform: 'uppercase',
-  },
-  transcriptionText: { fontSize: 16, color: 'black' },
-});
