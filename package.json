@@ -1,6 +1,6 @@
 {
   "name": "hearingaid",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -13,7 +13,8 @@
   "dependencies": {
     "@react-native-voice/voice": "^3.2.0",
     "react": "17.0.1",
-    "react-native": "0.64.2"
+    "react-native": "0.64.2",
+    "react-native-permissions": "^3.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

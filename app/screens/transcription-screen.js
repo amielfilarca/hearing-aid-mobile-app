@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Voice from '@react-native-voice/voice';
+import { check, PERMISSIONS, request, RESULTS } from 'react-native-permissions';
 
 const Results = ({ results }) => {
   return (
@@ -33,8 +34,29 @@ const Transcription = () => {
   const [partialResults, setPartialResults] = useState([]);
   const [results, setResults] = useState([]);
   const [error, setError] = useState(null);
+  const [hasPermission, setHasPermission] = useState(false);
+
+  useEffect(async () => {
+    await checkPermission();
+    if (!hasPermission) await requestPermission();
+
+    return () => {};
+  }, []);
+
+  const checkPermission = async () => {
+    const checkResult = await check(PERMISSIONS.ANDROID.RECORD_AUDIO);
+    if (checkResult === RESULTS.GRANTED) setHasPermission(true);
+    return checkResult;
+  };
+
+  const requestPermission = async () => {
+    const requestResult = await request(PERMISSIONS.ANDROID.RECORD_AUDIO);
+    if (requestResult === RESULTS.GRANTED) setHasPermission(true);
+    return requestResult;
+  };
 
   const startListening = async () => {
+    if (!hasPermission) await requestPermission();
     await Voice.start('en-US');
     setPartialResults([]);
     setResults([]);
