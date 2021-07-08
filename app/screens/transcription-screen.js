@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { Button, Layout, Text } from '@ui-kitten/components';
 import Voice from '@react-native-voice/voice';
 import { check, PERMISSIONS, request, RESULTS } from 'react-native-permissions';
+import AppVersion from '../components/app-version';
 
 const Results = ({ results }) => {
   return (
@@ -94,6 +95,8 @@ const Transcription = () => {
 
   return (
     <Layout style={{ flex: 1 }}>
+      <AppVersion />
+
       <View
         style={{
           flex: 1,
