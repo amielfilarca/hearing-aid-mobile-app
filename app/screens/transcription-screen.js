@@ -57,7 +57,7 @@ const Transcription = () => {
 
   const startListening = async () => {
     if (!hasPermission) await requestPermission();
-    await Voice.start('en-US');
+    await Voice.start('fil-PH');
     setPartialResults([]);
     setResults([]);
     setError(null);
